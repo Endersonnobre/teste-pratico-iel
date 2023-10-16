@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<form method="post" action="/login/cadastrar">
+    <div class="form-group">
+        <label for="usuario">Usuário</label>
+        <input type="text" name="usuario" value="" class="form-control" id="usuario" placeholder="Digite o seu nome de usuário">
+        @Html.ValidationMessage("usuario")
+    </div>
+    <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" name="senha" value="" class="form-control" id="password" placeholder="Digite o sua senha">
+        @Html.ValidationMessage("senha")
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<form method="get" action="/login/index">
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+@ViewBag.Mensagem
+
